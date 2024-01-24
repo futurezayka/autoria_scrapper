@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyz
+*.pywz
+
+# Logs
+log/
+*.log
+
+# BeautifulSoup
+.bs4_cache/
+
+# Virtual Environment
+.venv
+.venv/
+venv/
+env/
+ENV/
+venv.bak/
+env.bak/
+ENV.bak/
+
+# .vscode (Visual Studio Code)
+.vscode/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Environment variables
+.env
+
+.idea/
+.idea
+
+.dumps/
+.dumps
+.dumps*
+
+# Project exclude paths
+/dumps/

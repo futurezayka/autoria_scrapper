@@ -1,0 +1,27 @@
+version: '3.10'
+services:
+  scraper:
+    build: .
+    environment:
+      - DB_HOST=localhost
+      - DB_PORT=5432
+      - DB_NAME=scraper_db
+      - DB_USER=scraper
+      - DB_PASSWORD=scraper
+    volumes:
+      - ./dumps:/scrapper/dumps
+      - ./log:/scrapper/log
+    depends_on:
+      - db
+  db:
+    image: postgres:15.5
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      - POSTGRES_DB=scraper_db
+      - POSTGRES_USER=scraper
+      - POSTGRES_PASSWORD=12345678
+    command: [ "postgres", "-c", "listen_addresses=*", "-c", "log_statement=all" ]
+volumes:
+  db-data:

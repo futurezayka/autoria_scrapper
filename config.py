@@ -1,0 +1,10 @@
+TIMEZONE = 'Europe/Kiev'
+BASE_URL = 'https://auto.ria.com/uk/search/used/'
+URL = 'https://auto.ria.com/uk/search/used/?page={page}&size=100'
+DUMPS_FOLDER = '/scrapper/dumps'
+DB_USER = "scraper"
+DB_PASSWORD = "12345678"
+DB_HOST = "db"
+DB_PORT = '5432'
+DB_NAME = "scraper_db"
+DB_URL = f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
