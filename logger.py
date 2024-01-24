@@ -1,21 +1,21 @@
 import os
 import logging
 from logging.handlers import RotatingFileHandler
+from config import LOG_FOLDER
 
 LOGGER_MB_LIMIT = 50
 
-log_directory = "/scrapper/log"
-os.makedirs(log_directory, exist_ok=True)
+os.makedirs(LOG_FOLDER, exist_ok=True)
 
 formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
 
-info_handler = RotatingFileHandler(os.path.join(log_directory, "log_info.log"), mode='a',
+info_handler = RotatingFileHandler(os.path.join(LOG_FOLDER, "log_info.log"), mode='a',
                                    maxBytes=LOGGER_MB_LIMIT * 1024 * 1024, backupCount=1,
                                    encoding='utf-8', delay=False)
 info_handler.setFormatter(formatter)
 info_handler.setLevel(logging.INFO)
 
-error_handler = RotatingFileHandler(os.path.join(log_directory, "log_error.log"), mode='a',
+error_handler = RotatingFileHandler(os.path.join(LOG_FOLDER, "log_error.log"), mode='a',
                                     maxBytes=LOGGER_MB_LIMIT * 1024 * 1024, backupCount=1,
                                     encoding='utf-8', delay=False)
 error_handler.setFormatter(formatter)
