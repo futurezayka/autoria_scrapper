@@ -22,6 +22,6 @@ services:
       - POSTGRES_DB=scraper_db
       - POSTGRES_USER=scraper
       - POSTGRES_PASSWORD=12345678
-    command: [ "postgres", "-c", "listen_addresses=*", "-c", "log_statement=all" ]
+    command: [ "postgres", "-c", "listen_addresses=*" ]
 volumes:
   db-data:
